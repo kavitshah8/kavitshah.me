@@ -1,0 +1,5 @@
+@import url('~rc-select/dist/react-select.css');
+
+.active {
+  color: green;
+}
