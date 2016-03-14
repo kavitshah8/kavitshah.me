@@ -2,7 +2,7 @@
 
 import React from 'react';
 import request from 'superagent';
-import Spinner from 'react-spinkit';
+// import Spinner from 'react-spinkit';
 
 import InputBox from './InputBox.jsx';
 
@@ -57,7 +57,8 @@ export default React.createClass({
   },
   renderVerificationBox () {
       if (this.state.showSpinner) {
-        return (<Spinner spinnerName='circle' />);
+        // return (<Spinner spinnerName='circle' />);
+        return (<div> </div>);
       }
       if (this.state.isVerified === undefined) {
         return;
