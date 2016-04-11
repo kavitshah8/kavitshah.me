@@ -7,16 +7,26 @@ import EncryptForm from './EncryptForm.jsx';
 export default React.createClass({
   render () {
     return (
-      <div className="container">
-        <div className="navbar-header">
-          <a href="/"><i className="fa fa-home fa-2x fa-fw"></i></a>
-          <a className="navbar-brand" href="/tools/bcrypt-verify/">Bcrypt And Verify</a>
+        <div>
+
+            <nav className="navbar navbar-default">
+              <div className="container-fluid">
+                <div className="navbar-header">
+                    <a className="navbar-brand" href="/"><span className="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+                </div>
+                <ul className="nav navbar-nav">
+                    <li className="active">
+                        <p className="navbar-text"><a href="/tools/bcrypt-verify/" className="navbar-link">Bcrypt And Verify</a></p>
+                    </li>
+                </ul>
+              </div>
+            </nav>
+
+            <div className="row">
+                <EncryptForm />
+                <VerificationForm />
+            </div>
         </div>
-        <div className="forms-container">
-          <EncryptForm />
-          <VerificationForm />
-        </div>
-      </div>
     );
   }
 });

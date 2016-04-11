@@ -36,7 +36,7 @@ export default React.createClass({
                 </a>
             </div>
             <div className="col-sm-1">
-                <a href="/tools/bcrypt-verify">
+                <a href="/tools/bcrypt-verify/">
                 <img src="https://d262ilb51hltx0.cloudfront.net/fit/c/32/32/1*T1b83o47E1AI0lTpwzHVvA.png" />
                 </a>
             </div>

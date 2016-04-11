@@ -6,8 +6,8 @@ import App from './components/App.jsx';
 import Form from './components/Form.jsx';
 
 render((
-  <Router history={browserHistory}>
-    <Route path="/" component={App} />
-    <Route path="/tools/bcrypt-verify" component={Form} />
-  </Router>
+    <Router history={browserHistory}>
+        <Route path="/" component={App} />
+        <Route path="/tools/bcrypt-verify" component={Form} />
+    </Router>
 ), document.getElementById('app'));

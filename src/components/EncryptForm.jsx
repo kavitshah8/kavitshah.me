@@ -7,6 +7,16 @@ import request from 'superagent';
 import InputBox from './InputBox.jsx';
 import Select from './Select.jsx';
 
+const SALT_WORK_FACTOR = [
+    { value: 8, label: '8' },
+    { value: 9, label: '9' },
+    { value: 10, label: '10' },
+    { value: 11, label: '11' },
+    { value: 12, label: '12' },
+    { value: 13, label: '13' },
+    { value: 14, label: '14' }
+];
+
 export default React.createClass({
   getInitialState () {
     return {
@@ -14,13 +24,7 @@ export default React.createClass({
       hashedPassword: '',
       showOutputBox: false,
       options: [
-        { value: 8, label: '8' },
-        { value: 9, label: '9' },
-        { value: 10, label: '10' },
-        { value: 11, label: '11' },
-        { value: 12, label: '12' },
-        { value: 13, label: '13' },
-        { value: 14, label: '14' }
+        { value: 8, label: '8' }
       ],
       matchPos: 'any',
       matchValue: true,
@@ -73,21 +77,47 @@ export default React.createClass({
         // ret = <Spinner spinnerName='circle' />;
       ret = <div />;
     else if (this.state.showOutputBox) {
-      ret = <input className="outputBox" value={this.state.hashedPassword} readOnly></input>;
+      ret = <input className="form-control" value={this.state.hashedPassword} readOnly></input>;
     } else {
       ret = null;
     }
     return ret;
   },
+
+    renderSelect () {
+        let { options, value } = this.state;
+        return (
+            <select className="form-control" onSelect={this.handleUserSelect} required>
+                {
+                    SALT_WORK_FACTOR.map((opt) => {
+                        return (<option value={opt.value}>{opt.label}</option>);
+                    })
+                }
+            </select>
+        );
+    },
+
   render () {
     return(
-      <div className="form-container">
-        <div className="form-title">Bcrypt</div>
+      <div className="col-md-4 col-md-offset-1">
         <form onSubmit={this.onSubmit}>
-          <InputBox inputPassword={this.state.inputPassword} autoFocus placeholder='Enter a password to bcrypt' style={{margin: '10px'}} onUserInput={this.handleUserInput} />
-          <Select options={this.state.options} value={this.state.value} onSelect={this.handleUserSelect} required/>
-          <button className="form-button" type='submit'>Bcrypt</button>
-          {this.renderOutputBoxOrSpinner()}
+            <div className="form-group">
+                <label>Bcrypt</label>
+                <InputBox
+                    inputPassword={this.state.inputPassword}
+                    placeholder='Enter a password to bcrypt'
+                    onUserInput={this.handleUserInput}
+                />
+            </div>
+            <div className="form-group">
+                {this.renderSelect()}
+            </div>
+            <div className="form-group">
+                <button className="btn btn-primary" type='submit'>Bcrypt</button>
+            </div>
+            <div className="form-group">
+                {this.renderOutputBoxOrSpinner()}
+            </div>
         </form>
       </div>
     );

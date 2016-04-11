@@ -1,5 +1,6 @@
 import React from 'react';
 import Select from 'react-select';
+// import css from '../styles/select.css';
 
 var ValuesAsNumbersField = React.createClass({
 	displayName: 'ValuesAsNumbersField',
@@ -31,7 +32,7 @@ var ValuesAsNumbersField = React.createClass({
 	},
 	onChange(value) {
 		this.setState({ value });
-		console.log('Numeric Select value changed to', value);
+		console.log(`Numeric Select value changed to ${value}`);
 	},
 	onChangeMulti(event) {
 		this.setState({

@@ -1,117 +1,16 @@
-@import url('~rc-select/dist/react-select.css');
-
-* {
-	/*Includes border, margin as a part of box. margin is never part of box.*/
-	box-sizing: border-box;
-	font-family: 'Roboto Slab', serif;
+.navbar {
+    border: 0px;
+    border-radius: 0px;
 }
-body {
-	margin: 0px;
-}
-#app {
-	font-size: 12px;
-	min-height: 450px;
-}
-.container {
-	display: block;
-}
-.navbar-header {
-	background-color: #3A5795;
-	height: 40px;
-}
-a {
-	text-decoration: none;
-}
-.navbar-brand {
-		font-size: 19px;
-		padding-left: 20px;
-		line-height: 40px;
-		color: #ffffff;
-		text-align: center;
-}
-.forms-container {
-	display: block;
-}
-.form-container {
-	display: inline-block;
-	width: 50%;
-	padding: 50px;
-	/*Keeps both forms attached to top. If you do not then after submitting first one another one goes down.*/
-	vertical-align: top;
-}
-.form-title {
-	font-size: 17px;
-	margin-left: 15px;
-	font-weight: 400;
-}
-.inputBox {
-  margin: 15px;
-	height: 35px;
-	width: 500px;
-	padding: 10px;
-	font-size: 12px;
-	font-weight: bold;
-}
-.outputBox {
-  margin: 15px;
-	height: 35px;
-	width: 500px;
-	padding: 10px;
-	font-size: 12px;
-	border: none;
-	background-color: #eeeeee;
-	font-weight: bold;
-}
-.verification-box {
-	margin: 15px;
-	width: 500px;
-	padding: 7px;
-	font-size: 15px;
-	font-weight: bold;
-	color: white;
-	text-align: center;
-}
-.verified {
-		background-color: #43ac6a;
-}
-.unverified {
-		background-color: #f04124;
-}
-.form-button {
-	height: 35px;
-	width: 60px;
-	margin: 15px;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-	background-color: #3A5795;
+.navbar-default {
+    background-color: #3A5795;
+    color: #fff;
 }
 
-.default {
-	display: inline-block;
-	margin-left:20px;
-	margin-top:7px;
-	vertical-align: top;
-	font-weight: bold;
-	color: black;
+.navbar-default a.navbar-brand {
+    color: #fff;
 }
 
-.circle-wrapper {
-	width: 100px !important;
-	height: 50px !important;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.adsense-container {
-	max-width: 1000px;
-	margin: auto;
-}
-
-/*font-awesome*/
-.fa.fa-home {
-	font-size: 19px;
-	padding: 0 20px;
-	line-height: 40px;
-	color: #ffffff;
+.navbar-default a.navbar-link {
+    color: #fff;
 }

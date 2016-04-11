@@ -65,28 +65,40 @@ export default React.createClass({
       }
       if (this.state.isVerified) {
         return (
-          <div className="verification-box verified" >
+          <button className="btn btn-success" >
             { unicode.correct + ' ' + 'Match.' }
-          </div>
+          </button>
         );
       }
       return (
-        <div className="verification-box unverified">
+        <button className="btn btn-danger">
           { unicode.cross + ' ' + 'No match.' }
-        </div>
+        </button>
       );
   },
   render () {
     return (
-      <div className="form-container">
-        <div className="form-title">Verify</div>
+      <div className="col-md-4 col-md-offset-1">
         <form onSubmit={this.onSubmit}>
-          <InputBox inputPassword={this.state.inputPassword} placeholder='Enter plain text to verify' onUserInput={this.handleUserInput} />
-          <InputBox inputPassword={this.state.hashedPassword} placeholder='Enter hashed password to check against plain text' onUserInput={this.handleHashedPassword} />
-          <div>
-            <button className="form-button" type='submit'>Verify</button>
-            {this.renderVerificationBox()}
-          </div>
+            <div className="form-group">
+                <label>Verify</label>
+                <InputBox
+                    inputPassword={this.state.inputPassword}
+                    placeholder='Enter plain text to verify'
+                    onUserInput={this.handleUserInput} />
+            </div>
+            <div className="form-group">
+                <InputBox
+                    inputPassword={this.state.hashedPassword}
+                    placeholder='Enter hashed password to check against plain text'
+                    onUserInput={this.handleHashedPassword} />
+            </div>
+            <div className="form-group">
+                <button className="btn btn-primary" type='submit'>Verify</button>
+            </div>
+            <div className="form-group">
+                {this.renderVerificationBox()}
+            </div>
         </form>
       </div>
     );
