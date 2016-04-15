@@ -8,7 +8,6 @@ export default React.createClass({
   render () {
     return (
         <div>
-
             <nav className="navbar navbar-default">
               <div className="container-fluid">
                 <div className="navbar-header">
@@ -16,12 +15,17 @@ export default React.createClass({
                 </div>
                 <ul className="nav navbar-nav">
                     <li className="active">
-                        <p className="navbar-text"><a href="/tools/bcrypt-verify/" className="navbar-link">Bcrypt And Verify</a></p>
+                        <p className="navbar-text">
+                            <a href="/tools/bcrypt-verify/" className="navbar-link">
+                                <strong>
+                                    Bcrypt And Verify
+                                </strong>
+                            </a>
+                        </p>
                     </li>
                 </ul>
               </div>
             </nav>
-
             <div className="row">
                 <EncryptForm />
                 <VerificationForm />

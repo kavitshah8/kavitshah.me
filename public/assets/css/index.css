@@ -14,3 +14,7 @@
 .navbar-default a.navbar-link {
     color: #fff;
 }
+
+.btn.btn-primary {
+    background-color: #3A5795;
+}
